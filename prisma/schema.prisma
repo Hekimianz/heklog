@@ -13,10 +13,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Session {
+  id        String   @id @default(uuid())
+  sid       String   @unique
+  data      String
+  expiresAt DateTime
+
+  @@index([expiresAt])
+}
+
 model user {
-  id            String @id @default(uuid())
-  username      String @unique
-  password_hash String
+  id       String @id @default(uuid())
+  username String @unique
+  password String
 }
 
 model book {
