@@ -13,8 +13,31 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model item {
-  id    String @id @default(uuid())
-  title String
-  type  String
+model user {
+  id            String @id @default(uuid())
+  username      String @unique
+  password_hash String
+}
+
+model book {
+  id               String   @id @default(uuid())
+  title            String
+  author           String
+  cover_url        String
+  isbn             String   @unique
+  publication_year Int
+  page_count       Int
+  created_at       DateTime @default(now())
+  thoughts_text    String
+}
+
+model movie {
+  id            String   @id @default(uuid())
+  title         String
+  director      String
+  releaseYear   Int
+  runtime       Int
+  poster_url    String
+  createdAt     DateTime @default(now())
+  thoughts_text String
 }
