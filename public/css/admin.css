@@ -4,4 +4,44 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+}
+
+form {
+  background-color: var(--rose-light);
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+input {
+  border-radius: 4px;
+  padding: 4px;
+  border: 1px solid var(--jet);
+}
+
+input:active,
+input:focus {
+  outline: 2px solid var(--green);
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  border: 1px solid var(--jet);
+  border-radius: 4px;
+  color: var(--jet);
+  background-color: #d8c0c1;
+  transition: 0.2s all ease;
+}
+
+button:hover {
+  background-color: var(--green);
+  font-weight: 600;
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: 2px solid var(--green);
+  background-color: #5c906a;
+  transform: translateY(2px);
 }
